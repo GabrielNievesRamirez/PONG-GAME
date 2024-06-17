@@ -13,16 +13,40 @@
         body {
             background: black;
             color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .menu {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .menu button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .menu button:hover {
+            background-color: #45a049;
         }
 
         .escenario {
             width: 800px;
             height: 600px;
-            margin: calc(50vh - 300px) auto 0;
             border: 6px solid white;
             position: relative;
             overflow: hidden;
-            display: none; /* Ocultar el escenario al inicio */
+            display: none; /* Inicialmente oculto */
         }
 
         .marcador {
@@ -43,7 +67,7 @@
             right: 100px;
         }
 
-        .pala {
+        .pala  {
             width: 14px;
             height: 100px;
             background: white;
@@ -57,12 +81,12 @@
         }
 
         .pala2 {
-            left: 760px
+            left: 760px;
         }
 
         .red {
             position: absolute;
-            top: 0;
+            top:0;
             bottom: 0;
             left: calc(50% - 3px);
             border-width: 0px;
@@ -79,253 +103,229 @@
             transform: translate(-50%, 50%);
             border-radius: 50%;
         }
-
-        .escenario.florido {
-            background: rgb(105, 39, 65);
-            border-color: rgb(255, 103, 252);
-            border-radius: 16px;
-        }
-
-        .escenario.florido .pala {
-            background: rgb(255, 103, 252);
-            border-radius: 10px;
-        }
-
-        .escenario.florido .pelota {
-            background: rgb(255, 193, 86);
-            width: 50px;
-            height: 50px;
-        }
-
-        .escenario.florido .red {
-            border-color: rgb(151, 61, 97);
-            border-width: 5px;
-            border-style: solid;
-        }
-
-        .escenario.florido .marcador {
-            font-family: Georgia, Times, 'Times New Roman', serif;
-            color: #83f591;
-        }
-
-        .escenario.neon {
-            background: rgb(4, 1, 39);
-            border: 3px solid rgb(0, 242, 255);
-            box-shadow: cyan 0 0 10px, cyan 0 0 10px inset;
-            border-radius: 8px;
-        }
-
-        .escenario.neon .pala {
-            background: rgb(5, 255, 226);
-            border-radius: 10px;
-            box-shadow: cyan 0 0 10px;
-            width: 6px;
-        }
-
-        .escenario.neon .pelota {
-            background: rgb(255, 245, 109);
-            box-shadow: rgb(255, 225, 30) 0 0 10px;
-            width: 16px;
-            height: 16px;
-        }
-
-        .escenario.neon .red {
-            border-color: rgb(255, 125, 246);
-        }
-
-        .escenario.neon .marcador {
-            font-family: "Futura", "Futura Std", Calibri, Verdana, Arial, 'Times New Roman', serif;
-            font-weight: 100;
-            color: rgb(255, 125, 246);
-            text-shadow: rgb(255, 36, 240) 0 0 10px;
-        }
-
-        .escenario.tecno {
-            background: rgb(136, 142, 184);
-            border: 10px ridge rgb(53, 102, 157);
-        }
-
-        .escenario.tecno .pala {
-            background: linear-gradient(to right, white 10%, rgb(46, 59, 115) 50%, rgb(79, 124, 188) 90%);
-            box-shadow: rgb(73, 82, 133) 2px 2px 4px, rgba(255, 255, 255, 0.5) 0 0 2px 1px inset;
-            border-radius: 2px;
-            width: 8px;
-        }
-
-        .escenario.tecno .pelota {
-            background: white;
-            box-shadow: rgba(255, 255, 255, 0.5) -1px -1px 3px inset, rgb(90, 112, 163) -3px -3px 10px 2px inset, black 2px 2px 5px -2px;
-            width: 20px;
-            height: 20px;
-        }
-
-        .escenario.tecno .red {
-            border-color: rgb(194, 205, 237);
-        }
-
-        .escenario.tecno .marcador {
-            font-family: "Futura", "Futura Std", Calibri, Verdana, Arial, 'Times New Roman', serif;
-            color: rgb(194, 205, 237);
-        }
-
-        .escenario.loco {
-            animation: arcoiris 2s linear infinite, escalar-borde 2s ease-out infinite alternate-reverse;
-            border: 10px solid currentColor;
-            background: rgb(255, 151, 40);
-        }
-
-        .escenario.loco .pala {
-            animation: arcoiris 2s linear infinite;
-            background: currentColor;
-            border-radius: 2px;
-            width: 22px;
-        }
-
-        .escenario.loco .pelota {
-            animation: arcoiris 2s linear infinite;
-            background: currentColor;
-            width: 100px;
-            height: 100px;
-        }
-
-        .escenario.loco .red {
-            border-color: yellow;
-            border-style: dashed;
-        }
-
-        .escenario.loco .marcador {
-            font-family: "Comic Sans MS", Arial, 'Times New Roman', serif;
-            color: yellow;
-        }
-
-        @keyframes escalar-borde {
-            0% {
-                border-width: 8px;
-            }
-
-            100% {
-                border-width: 18px;
-            }
-        }
-
-        @keyframes arcoiris {
-            0% {
-                color: rgb(255, 58, 19);
-            }
-
-            17% {
-                color: yellow;
-            }
-
-            34% {
-                color: rgb(0, 255, 0);
-            }
-
-            50% {
-                color: cyan;
-            }
-
-            64% {
-                color: rgb(69, 45, 255);
-            }
-
-            83% {
-                color: rgb(255, 19, 239);
-            }
-
-            100% {
-                color: red;
-            }
-        }
-
-        /* Estilos del menú */
-        .menu {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 1000; /* Para que esté por encima del escenario */
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .menu h1 {
-            font-size: 2.5em;
-            color: white;
-        }
-
-        .menu ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .menu li {
-            margin-bottom: 10px;
-        }
-
-        .menu a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.5em;
-            transition: color 0.3s ease;
-        }
-
-        .menu a:hover {
-            color: #f0f0f0;
-        }
     </style>
 </head>
 <body>
 
-<div class="menu">
-    <h1>PONG</h1>
-    <ul>
-        <li><a href="#" id="startGame">Iniciar Juego</a></li>
-        <li><a href="#" id="config">Configuración</a></li>
-        <li><a href="#" id="about">Acerca de</a></li>
-    </ul>
-</div>
+    <div class="menu">
+        <button id="startGame">Iniciar Juego</button>
+        <button id="config">Configuración</button>
+        <button id="about">Acerca de</button>
+    </div>
 
-<div class="escenario">
-    <div class="marcador marcador1">0</div>
-    <div class="marcador marcador2">0</div>
+    <div class="escenario">
+        <div class="marcador marcador1">0</div>
+        <div class="marcador marcador2">0</div>
 
-    <div class="pala pala1"></div>
-    <div class="pala pala2"></div>
+        <div class="pala pala1"></div>
+        <div class="pala pala2"></div>
 
-    <div class="red"></div>
-    <div class="pelota"></div>
-</div>
+        <div class="red"></div>
+        <div class="pelota"></div>
+    </div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         var menu = document.querySelector('.menu');
         var startGameBtn = document.getElementById('startGame');
-        var configBtn = document.getElementById('config');
-        var aboutBtn = document.getElementById('about');
         var escenario = document.querySelector('.escenario');
 
         startGameBtn.addEventListener('click', function(e) {
             e.preventDefault();
             menu.style.display = 'none'; // Oculta el menú
             escenario.style.display = 'block'; // Muestra el escenario de juego
-            // Aquí puedes iniciar el juego o cualquier otra acción relacionada con comenzar el juego
+            iniciarJuego(); // Llama a la función para iniciar el juego
         });
 
-        configBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('Funcionalidad de configuración aún no implementada');
-            // Aquí puedes implementar la lógica para abrir un menú de configuración
-        });
+        // Definición de constantes y variables para el juego
+        var bordesTablero = {
+            minX: 0,
+            maxX: 800,
+            minY: 0,
+            maxY: 600
+        };
 
-        aboutBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('PONG - Juego desarrollado por [Tu Nombre]');
-            // Aquí puedes mostrar información sobre el juego o los desarrolladores
-        });
+        var pala1 = {
+            elem: document.querySelector(".pala1"),
+            vel: 300,
+            moviendose: false,
+            velActual: 0,
+            rozamiento: 1.15,
+            keyCodeArriba: "a",
+            keyCodeAbajo: "z"
+        };
+
+        var pala2 = {
+            elem: document.querySelector(".pala2"),
+            vel: 300,
+            moviendose: false,
+            velActual: 0,
+            rozamiento: 1.15,
+            keyCodeArriba: "ArrowUp",
+            keyCodeAbajo: "ArrowDown"
+        };
+
+        var pelota = {
+            elem: document.querySelector(".pelota"),
+            vel: 300,
+            dirX: 1,
+            dirY: 1,
+            arrastre: 0.1,
+            x: 400,
+            y: 300,
+            ancho: 24,
+            alto: 24
+        };
+
+        var marcador1 = {
+            elem: document.querySelector(".marcador1"),
+            puntos: 0
+        };
+
+        var marcador2 = {
+            elem: document.querySelector(".marcador2"),
+            puntos: 0
+        };
+
+        var deltaTime = 0;
+        var lastTime = 0;
+
+        // Función para iniciar el juego
+        function iniciarJuego() {
+            resetearJuego();
+            escenario.style.display = 'block'; // Asegura que el escenario esté visible
+            document.addEventListener("keydown", keyDownHandler);
+            document.addEventListener("keyup", keyUpHandler);
+            requestAnimationFrame(loopJuego);
+        }
+
+        // Función para reiniciar el juego
+        function resetearJuego() {
+            // Reinicia posiciones y marcadores
+            pala1.elem.style.bottom = "50%";
+            pala2.elem.style.bottom = "50%";
+            pelota.x = 400;
+            pelota.y = 300;
+            pelota.dirX = Math.random() < 0.5 ? 1 : -1;
+            pelota.dirY = Math.random() < 0.5 ? 1 : -1;
+            actualizarPosiciones();
+            actualizarMarcadores();
+        }
+
+        // Función para manejar eventos de teclado
+        function keyDownHandler(e) {
+            if (e.key === pala1.keyCodeArriba) {
+                pala1.velActual = pala1.vel;
+                pala1.moviendose = true;
+            } else if (e.key === pala1.keyCodeAbajo) {
+                pala1.velActual = -pala1.vel;
+                pala1.moviendose = true;
+            }
+
+            if (e.key === pala2.keyCodeArriba) {
+                pala2.velActual = pala2.vel;
+                pala2.moviendose = true;
+            } else if (e.key === pala2.keyCodeAbajo) {
+                pala2.velActual = -pala2.vel;
+                pala2.moviendose = true;
+            }
+        }
+
+        function keyUpHandler(e) {
+            if (e.key === pala1.keyCodeArriba || e.key === pala1.keyCodeAbajo) {
+                pala1.moviendose = false;
+            }
+
+            if (e.key === pala2.keyCodeArriba || e.key === pala2.keyCodeAbajo) {
+                pala2.moviendose = false;
+            }
+        }
+
+        // Función principal del juego (loop)
+        function loopJuego(timestamp) {
+            deltaTime = (timestamp - lastTime) / 1000;
+            lastTime = timestamp;
+
+            moverPalas();
+            moverPelota();
+            comprobarColisiones();
+            comprobarGol();
+
+            requestAnimationFrame(loopJuego);
+        }
+
+        // Funciones de movimiento y lógica del juego
+        function moverPalas() {
+            moverPala(pala1);
+            moverPala(pala2);
+        }
+
+        function moverPala(pala) {
+            if (pala.moviendose) {
+                pala.y += pala.velActual * deltaTime;
+                if (pala.y + pala.alto / 2 > bordesTablero.maxY) pala.y = bordesTablero.maxY - pala.alto / 2;
+                if (pala.y - pala.alto / 2 < bordesTablero.minY) pala.y = pala.alto / 2;
+                pala.elem.style.bottom = pala.y + "px";
+            } else {
+                pala.velActual /= pala.rozamiento;
+                if (Math.abs(pala.velActual) < 0.1) pala.velActual = 0;
+            }
+        }
+
+        function moverPelota() {
+            pelota.x += pelota.dirX * pelota.vel * deltaTime;
+            pelota.y += pelota.dirY * pelota.vel * deltaTime;
+            pelota.elem.style.left = pelota.x + "px";
+            pelota.elem.style.bottom = pelota.y + "px";
+        }
+
+        function comprobarColisiones() {
+            // Colisión con las paredes verticales
+            if (pelota.y + pelota.alto / 2 > bordesTablero.maxY || pelota.y - pelota.alto / 2 < bordesTablero.minY) {
+                pelota.dirY *= -1;
+            }
+
+            // Colisión con las palas
+            if (colisionPala(pala1) || colisionPala(pala2)) {
+                pelota.dirX *= -1;
+                pelota.vel *= 1.03; // Incremento de velocidad tras cada rebote en pala
+            }
+        }
+
+        function colisionPala(pala) {
+            var rectPelota = pelota.elem.getBoundingClientRect();
+            var rectPala = pala.elem.getBoundingClientRect();
+            return rectPelota.left < rectPala.right &&
+                rectPelota.right > rectPala.left &&
+                rectPelota.top < rectPala.bottom &&
+                rectPelota.bottom > rectPala.top;
+        }
+
+        function comprobarGol() {
+            if (pelota.x + pelota.ancho / 2 > bordesTablero.maxX) {
+                // Gol para jugador 1
+                marcador1.puntos++;
+                actualizarMarcadores();
+                resetearJuego();
+            } else if (pelota.x - pelota.ancho / 2 < bordesTablero.minX) {
+                // Gol para jugador 2
+                marcador2.puntos++;
+                actualizarMarcadores();
+                resetearJuego();
+            }
+        }
+
+        function actualizarPosiciones() {
+            pala1.elem.style.bottom = pala1.y + "px";
+            pala2.elem.style.bottom = pala2.y + "px";
+            pelota.elem.style.left = pelota.x + "px";
+            pelota.elem.style.bottom = pelota.y + "px";
+        }
+
+        function actualizarMarcadores() {
+            marcador1.elem.textContent = marcador1.puntos;
+            marcador2.elem.textContent = marcador2.puntos;
+        }
     });
 </script>
 
