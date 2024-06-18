@@ -189,7 +189,6 @@
 
     // JUEGO
     var escenarioElem = document.querySelector(".escenario");
-    var estilos = ["tecno", "florido", "neon", "loco"];
     var bordesTablero = new Bordes(0, 800, 0, 600);
     var dir = Math.random() * 2 * Math.PI;
     var pelota = new Pelota(bordesTablero, document.querySelector(".pelota"), 300, Math.cos(dir), Math.sin(dir), 0.1);
@@ -197,6 +196,9 @@
     var pala2 = new Pala(bordesTablero, document.querySelector(".pala2"), 300, 1.15, "ArrowUp", "ArrowDown");
     var marcador1 = new Marcador(document.querySelector(".marcador1"));
     var marcador2 = new Marcador(document.querySelector(".marcador2"));
+
+    var lastTime = performance.now();
+    var deltaTime = 0;
 
     function Update() {
         pelota.Mover();
@@ -231,9 +233,6 @@
         }
     }
 
-    var lastTime = performance.now();
-    var deltaTime = 0;
-
     function Loop() {
         var now = performance.now();
         deltaTime = (now - lastTime) / 1000; // deltaTime en segundos
@@ -247,25 +246,9 @@
     }
 
     // Iniciar juego
-    var paused = false; // Variable para controlar el estado de pausa
     Loop();
-
-    // Event listener para la tecla Espacio (para pausar/reanudar el juego)
-    document.addEventListener("keydown", function(event) {
-        if (event.key === " ") { // Espacio para pausar/reanudar
-            paused = !paused;
-            if (paused) {
-                pala1.Pause();
-                pala2.Pause();
-            } else {
-                pala1.Resume();
-                pala2.Resume();
-            }
-        }
-    });
 
 </script>
 
 </body>
 </html>
-
