@@ -8,10 +8,7 @@ Este es un juego de Pong desarrollado en HTML, CSS y JavaScript.
 
 Mira el video a continuación para ver una demostración del juego:
 
-
 [![Mira el video en YouTube](escenario.jpeg)](https://www.youtube.com/shorts/xAOZBC5zVjg)
-
-
 
 ## Descripción
 
@@ -19,7 +16,7 @@ PONG es un juego clásico de tenis de mesa, donde dos jugadores controlan palas 
 
 ## Características
 
-- modos de juego: uno y dos jugadores.
+- Modos de juego: uno y dos jugadores.
 - Personalización del escenario con diferentes estilos visuales: tecno, florido, neon, y loco.
 - Marcador para llevar el conteo de puntos de cada jugador.
 
