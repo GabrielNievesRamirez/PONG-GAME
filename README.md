@@ -1,8 +1,12 @@
 # PONG-GAME
 
 Este es un juego de Pong desarrollado en HTML, CSS y JavaScript.
-![escenario.jpeg](https://github.com/GabrielNievesRamirez/PONG-GAME/blob/main/escenario.jpeg?raw=true)
 
+## Video de demostración
+
+Mira el video a continuación para ver una demostración del juego:
+
+<iframe width="560" height="315" src="https://https://youtube.com/shorts/xAOZBC5zVjg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Descripción
 
