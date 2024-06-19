@@ -1,2 +1,13 @@
-@start PONG-GAME
+@startuml PONG-GAME
+
+
+class Border
+
+class ObjetoMovil
+
+class Pelota
+
+class Pala
+
+class Marcador
 
