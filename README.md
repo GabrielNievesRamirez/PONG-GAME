@@ -2,13 +2,15 @@
 
 Este es un juego de Pong desarrollado en HTML, CSS y JavaScript.
 
+![Descripción del juego](escenario.jpeg)
+
 ## Video de demostración
 
 Mira el video a continuación para ver una demostración del juego:
 
-## Video de demostración
 
-[Mira el video en YouTube](https://youtube.com/shorts/xAOZBC5zVjg)
+[![Mira el video en YouTube](escenario.jpeg)](https://www.youtube.com/shorts/xAOZBC5zVjg)
+
 
 
 ## Descripción
