@@ -6,7 +6,10 @@ Este es un juego de Pong desarrollado en HTML, CSS y JavaScript.
 
 Mira el video a continuación para ver una demostración del juego:
 
-<iframe width="560" height="315" src="https://https://youtube.com/shorts/xAOZBC5zVjg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+## Video de demostración
+
+[Mira el video en YouTube](https://youtube.com/shorts/xAOZBC5zVjg)
+
 
 ## Descripción
 
