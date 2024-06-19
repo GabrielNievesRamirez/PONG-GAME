@@ -1,13 +1,42 @@
-@startuml PONG-GAME
+@startuml
 
+class Border {
+  // Atributos si los hubiera
+}
 
-class Border
+class ObjetoMovil {
+  + ObjetoMovil(bordesTablero: Border, elem: Element, vel: number)
+}
 
-class ObjetoMovil
+class Pelota {
+  + Pelota(bordesTablero: Border, elem: Element, vel: number, dirX: number, dirY: number, arrastre: number)
+  + Mover()
+  + ComprobarRebote()
+  + RebotarX(inerciaY: number)    
+  + RebotarY()
+  + ComprobarGol()
+  + Resetear(vel: number, x: number, y: number, dirX: number, dirY: number)
+}
 
-class Pelota
+class Pala {
+  + Pala(bordesTablero: Border, elem: Element, vel: number, rozamiento: number, keyCodeArriba: string, keyCodeAbajo: string)
+  + IniciarMovimiento(evento: Event)
+  + FinalizarMovimiento(evento: Event)
+  + Mover()                                
+  + Frenar()
+  + ComprobarColision(bordes2: Border): boolean
+}
 
-class Pala
+class Marcador {
+  + Marcador(elem: Element)
+  + GanarPunto()
+}
 
-class Marcador
+ObjetoMovil <|-- Pelota
+ObjetoMovil <|-- Pala
+Pala -- Pelota
 
+Marcador "1" o-- "1" Element : elem
+Border --* ObjetoMovil
+
+@enduml
