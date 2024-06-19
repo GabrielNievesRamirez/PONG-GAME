@@ -22,10 +22,13 @@ PONG es un juego clásico de tenis de mesa, donde dos jugadores controlan palas 
 - Jugador 1: Utiliza las teclas "A" (arriba) y "Z" (abajo) para mover la pala.
 - Jugador 2: Utiliza las teclas de flecha arriba y abajo para mover la pala.
 
- ¡Disfruta jugando y comparte tus puntuaciones más altas!
+ 
 
 ## Video de demostración
 
 Da click a la imagen y mira el video a continuación para ver una demostración del juego!
 
 [![Mira el video en YouTube](escenario.jpeg)](https://www.youtube.com/shorts/xAOZBC5zVjg)
+
+
+¡Disfruta jugando y comparte tus puntuaciones más altas! 
